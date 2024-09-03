@@ -1,15 +1,21 @@
 'use strict'
-//! don't forget the database conneciton
 
-//* express
+//* Express:
+const express = require('express');
+const app = express();
 
-// Required modules:
+//* Required modules:
 
-//* dotenv var config
+// env variables:
+require('dotenv').config();
+const HOST = process.env?.HOST || '127.0.0.1';
+const PORT = process.env?.PORT || 8000;
 
-//* async error handler
+// async error handler:
+require('express-async-errors');
 
-// Configuration:
+//* Configuration:
+//! don't forget the database conneciton ENV ENV ENV ENV
 
 //* Connect the Database
 
