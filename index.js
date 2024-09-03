@@ -1,4 +1,5 @@
 'use strict'
+//! don't forget the database conneciton
 
 //* express
 
@@ -21,5 +22,7 @@
 // Error Handler:
 
 // Run Server:
+app.listen(PORT, HOST, () => console.log(`http://${HOST}:${PORT}`));
 
-// Sync:
+// Sync: clear database
+// require('./src/helpers/sync')(); 
