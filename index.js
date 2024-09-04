@@ -15,10 +15,10 @@ const PORT = process.env?.PORT || 8000;
 require('express-async-errors');
 
 //* Configurations:
+
+// Connect the Database
 const { dbConnection } = require('./src/configs/dbConnection');
 dbConnection();
-
-//* Connect the Database
 
 // Middlewares:
 
