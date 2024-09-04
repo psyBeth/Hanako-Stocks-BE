@@ -20,9 +20,12 @@ require('express-async-errors');
 const { dbConnection } = require('./src/configs/dbConnection');
 dbConnection();
 
-// Middlewares:
+//* Middlewares:
 
-//* accept json, static uploadfile, auth check, logger, getModelList
+// Accept JSON:
+app.use(express.json());
+
+//* static uploadfile, auth check, logger, getModelList
 
 // Routes:
 
