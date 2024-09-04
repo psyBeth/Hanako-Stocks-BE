@@ -30,6 +30,7 @@ app.use(express.json());
 // Routes:
 
 // Error Handler:
+app.use(require('./src/middlewares/errorHandler'));
 
 // Run Server:
 app.listen(PORT, HOST, () => console.log(`http://${HOST}:${PORT}`));
