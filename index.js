@@ -14,8 +14,9 @@ const PORT = process.env?.PORT || 8000;
 // async error handler:
 require('express-async-errors');
 
-//* Configuration:
-//! don't forget the database conneciton ENV ENV ENV ENV
+//* Configurations:
+const { dbConnection } = require('./src/configs/dbConnection');
+dbConnection();
 
 //* Connect the Database
 
