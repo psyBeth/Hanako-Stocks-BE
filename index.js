@@ -1,10 +1,10 @@
 'use strict'
 
-//* Express:
+//? Express:
 const express = require('express');
 const app = express();
 
-//* Required modules:
+//? Required modules:
 
 // env variables:
 require('dotenv').config();
@@ -14,13 +14,13 @@ const PORT = process.env?.PORT || 8000;
 // async error handler:
 require('express-async-errors');
 
-//* Configurations:
+//? Configurations:
 
 // Connect the Database
 const { dbConnection } = require('./src/configs/dbConnection');
 dbConnection();
 
-//* Middlewares:
+//? Middlewares:
 
 // Accept JSON:
 app.use(express.json());
@@ -31,14 +31,17 @@ app.use('./upload', express.static('./upload'));
 // Auth check:
 app.use(require('./src/middlewares/authentication'));
 
-//* logger, getModelList
+// Run logger:
+app.use(require('./src/middlewares/logger'));
 
-// Routes:
+//* getModelList
 
-// Error Handler:
+//? Routes:
+
+//? Error Handler:
 app.use(require('./src/middlewares/errorHandler'));
 
-// Run Server:
+//? Run Server:
 app.listen(PORT, HOST, () => console.log(`http://${HOST}:${PORT}`));
 
 // Sync: clear database
