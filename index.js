@@ -25,7 +25,10 @@ dbConnection();
 // Accept JSON:
 app.use(express.json());
 
-//* static uploadfile, auth check, logger, getModelList
+// Auth check:
+app.use(require('./src/middlewares/authentication'));
+
+//* static uploadfile, logger, getModelList
 
 // Routes:
 
