@@ -1,3 +1,3 @@
 'use strict'
 
-const {mongoose} = require('../configs/dbConnection');
+const { mongoose } = require('../configs/dbConnection');
