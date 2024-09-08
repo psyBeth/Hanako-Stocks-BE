@@ -8,3 +8,14 @@ const { mongoose } = require('../configs/dbConnection');
   "token": "...tokenKey..."
 }
 /* ------------------------------------------------------- */
+
+const TokenSchema = new mongoose.Schema({
+
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+  }
+
+}, {
+  collection: 'tokens',
+  timestamps: true
+});
