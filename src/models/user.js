@@ -59,4 +59,6 @@ const UserSchema = new mongoose.Schema({
     timestamps: true
 })
 
+//! Password encrypt will be used here 
+
 module.exports = mongoose.model('User', UserSchema);
