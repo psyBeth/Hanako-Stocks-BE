@@ -68,10 +68,10 @@ UserSchema.pre(['save', 'updateOne'], function (next) {
     // console.log(this)
 
     // get data from "this" or "this._update"
-    const data = this?._update || this
+    const data = this?._update || this;
 
     // email@domain.com
-    const isEmailValidated = data.email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data.email) : true
+    const isEmailValidated = data.email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data.email) : true;
 
     if (isEmailValidated) {
 
@@ -79,23 +79,23 @@ UserSchema.pre(['save', 'updateOne'], function (next) {
 
         if (data?.password) {
 
-            const isPasswordValidated = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(data.password)
+            const isPasswordValidated = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(data.password);
 
             if (isPasswordValidated) {
 
                 // console.log('Password OK')
 
-                data.password = passwordEncrypt(data.password)
+                data.password = passwordEncrypt(data.password);
 
                 if (this?._update) {
 
-                    this._update = data
+                    this._update = data;
                     // this._update.password = data.password 
 
                 } else {
                     // this = data // doesn't allow
-                    this.password = data.password
-                }
+                    this.password = data.password;
+                };
 
                 //? ShortHand:
                 // // save:
@@ -105,14 +105,14 @@ UserSchema.pre(['save', 'updateOne'], function (next) {
 
 
             } else {
-                next(new Error('Password is not validated.'))
+                next(new Error('Password is not validated.'));
             }
         }
         next()
 
     } else {
-        next(new Error('Email is not validated.'))
+        next(new Error('Email is not validated.'));
     }
-})
+});
 
 module.exports = mongoose.model('User', UserSchema);
