@@ -48,6 +48,25 @@ module.exports = {
                 }
             }
         */
+
+        // for new records:
+        req.body.isStaff = false;
+        req.body.isAdmin = false;
+
+        const data = await User.create(req.body);
+
+        /* AUTO LOGIN */
+        const tokenData = await Token.create({
+            userId: data._id,
+            token: passwordEncrypt(data._id + Date.now())
+        });
+        /* AUTO LOGIN */
+
+        res.status(201).send({
+            error: false,
+            token: tokenData.token,
+            date
+        });
     },
 
     read: async (req, res) => {
@@ -55,6 +74,15 @@ module.exports = {
             #swagger.tags = ["Users"]
             #swagger.summary = "Get Single User"
         */
+
+        const customFilters = req.user?.isAdmin ? {_id: req.params.id} : {_id: req.user._id};
+
+        const data = await User.findOne(customFilters);
+
+        res.status(200).send({
+            error: false,
+            data
+        });
     },
 
     update: async (req, res) => {
@@ -73,6 +101,22 @@ module.exports = {
                 }
             }
         */
+
+        const customFilters = req.user?.isAdmin ? {_id: req.params.id} : {_id: req.user._id};
+
+        // not allow changing admin/staff 
+        if(!req.user?.isAdmin) {
+            delete req.body.isStaff
+            delete req.body.isAdmin
+        };
+
+        const data = await User.updateOne(customFilters, req.body, { runValidators: true });
+
+        res.status(202).send({
+            error: false,
+            data,
+            new: await User.findOne(customFilters)
+        });
     },
 
     delete: async (req, res) => {
@@ -80,5 +124,19 @@ module.exports = {
             #swagger.tags = ["Users"]
             #swagger.summary = "Delete User"
         */
+
+        if(req.params.id != req.user._id) {
+            const data = await User.deleteOne({_id: req.params.id});
+
+            res.status(data.deletedCount ? 204 : 404).send({
+                error: !data.deletedCount,
+                data
+            });
+
+        } else {
+            // admin cannot delete self
+            res.errorStatusCode = 403;
+            throw new Error('You can not remove your account.');
+        };
     }
 }
