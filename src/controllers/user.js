@@ -20,6 +20,16 @@ module.exports = {
                 </ul>
             `
         */
+
+        const customFilters = req.user?.isAdmin ? {} : {_id: req.user._id};
+
+        const data = await res.getModelList(User, customFilter);
+
+        res.status(200).send({
+            error: false,
+            details: await res.getModelListDetails(User, customFilters),
+            data
+        });
     },
 
     create: async (req, res) => {
