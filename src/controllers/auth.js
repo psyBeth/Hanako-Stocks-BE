@@ -94,7 +94,7 @@ module.exports = {
 
                 if(err) {
                     res.errorStatusCode = 401;
-                    throww err;
+                    throw err;
                 } else {
 
                     const { _id, password} = userData;
