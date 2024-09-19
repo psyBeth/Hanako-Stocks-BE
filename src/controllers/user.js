@@ -23,7 +23,7 @@ module.exports = {
 
         const customFilters = req.user?.isAdmin ? {} : {_id: req.user._id};
 
-        const data = await res.getModelList(User, customFilters);
+        const data = await res.getModelList(User, customFilters); //! Something wrong here
 
         res.status(200).send({
             error: false,
