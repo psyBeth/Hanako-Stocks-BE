@@ -20,9 +20,12 @@ module.exports = {
                 </ul>
             `
         */
+        if (!req.user) {
+            return res.status(401).send({ error: true, message: "Unauthorized" });
+        };
 
         // can only see own records
-        const customFilters = req.user?.isAdmin ? {} : {_id: req.user._id};  //! _id cannot be read: undefined
+        const customFilters = req.user?.isAdmin ? {} : { _id: req.user._id };  //! _id cannot be read: undefined
 
         const data = await res.getModelList(User, customFilters); //! Something wrong here
 
@@ -74,9 +77,14 @@ module.exports = {
         /*
             #swagger.tags = ["Users"]
             #swagger.summary = "Get Single User"
+            
         */
 
-        const customFilters = req.user?.isAdmin ? {_id: req.params.id} : {_id: req.user._id};
+        if (!req.user) {
+            return res.status(401).send({ error: true, message: "Unauthorized" });
+        };
+
+        const customFilters = req.user?.isAdmin ? { _id: req.params.id } : { _id: req.user._id };
 
         const data = await User.findOne(customFilters);
 
@@ -102,11 +110,14 @@ module.exports = {
                 }
             }
         */
+        if (!req.user) {
+            return res.status(401).send({ error: true, message: "Unauthorized" });
+        };
 
-        const customFilters = req.user?.isAdmin ? {_id: req.params.id} : {_id: req.user._id};
+        const customFilters = req.user?.isAdmin ? { _id: req.params.id } : { _id: req.user._id };
 
         // not allow changing admin/staff 
-        if(!req.user?.isAdmin) {
+        if (!req.user?.isAdmin) {
             delete req.body.isStaff
             delete req.body.isAdmin
         };
@@ -126,8 +137,8 @@ module.exports = {
             #swagger.summary = "Delete User"
         */
 
-        if(req.params.id != req.user._id) {
-            const data = await User.deleteOne({_id: req.params.id});
+        if (req.params.id != req.user._id) {
+            const data = await User.deleteOne({ _id: req.params.id });
 
             res.status(data.deletedCount ? 204 : 404).send({
                 error: !data.deletedCount,
