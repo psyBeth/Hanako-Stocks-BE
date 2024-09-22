@@ -5,6 +5,8 @@ const router = require('express').Router();
 const category = require('../controllers/category');
 const permissions = require('../middlewares/permissions');
 
+// URL: /categories
+
 router.route('/(:id)?')
     .post(permissions.isAdmin, category.create)
     .get(permissions.isStaff, category.read)
