@@ -17,7 +17,26 @@ const SaleSchema = new mongoose.Schema({
     },
 
     productId: {
-        //! product first ig
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+        required: true
+    },
+
+    quantity: {
+        type: Number,
+        default: 1
+    },
+
+    price: {
+        type: Number,
+        required: true
+    },
+
+    priceTotal: {
+        type: Number,
+        set: function () { return this.price * this.quantity },
+        default: function () { return this.price * this.quantity },
+        transform: function () { return this.price * this.quantity }
     }
 
 }, {
