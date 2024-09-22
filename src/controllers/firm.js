@@ -18,6 +18,14 @@ module.exports = {
                 </ul>
             `
         */
+
+        const data = await res.getModelList(Firm);
+
+        res.status(200).send({
+            error: false,
+            details: await res.getModelListDetails(Firm),
+            data
+        });
     },
 
     create: async(req, res) => {
@@ -32,6 +40,13 @@ module.exports = {
                 }
             }
         */
+
+        const data = await Firm.create(req.body);
+
+        res.status(201).send({
+            error: false,
+            data
+        });
     },
 
     read: async(req, res) => {
@@ -39,6 +54,30 @@ module.exports = {
             #swagger.tags = ["Firms"]
             #swagger.summary = "Get Single Firm"
         */
+
+        // console.log();
+
+        if(req.params?.id) {
+
+            // Single: 
+            const data = await Firm.findOne({_id: req.params.id});
+
+            res.status(200).send({
+                error: false,
+                data
+            });
+
+        } else {
+
+            // All:
+            const data = await res.getModelList(Firm);
+
+            res.status(200).send({
+                error: false,
+                details: await res.getModelListDetails(Firm),
+                data
+            });
+        };
     },
 
     update: async(req, res) => {
@@ -53,6 +92,14 @@ module.exports = {
                 }
             }
         */
+
+        const data = await Firm.updateOne({_id: req.params.id}, req.body, {runValidators: true});
+
+        res.status(202).send({
+            error: false,
+            data,
+            new: await Firm.findOne({_id: req.params.id})
+        });
     },
 
     delete: async(req, res) => {
@@ -60,6 +107,13 @@ module.exports = {
             #swagger.tags = ["Firms"]
             #swagger.summary = "Delete Firm"
         */
+
+        const data = await Firm.deleteOne({_id: req.params.id});
+
+        res.status(data.deletedCount ? 204 : 404).send({
+            error: !data.deletedCount,
+            data
+        });
     }
 
 }
