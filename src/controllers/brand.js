@@ -55,7 +55,7 @@ module.exports = {
             #swagger.summary = "Get Single Brand"
         */
 
-        // console.log();
+        console.log('read run');
 
         if(req.params?.id) {
 

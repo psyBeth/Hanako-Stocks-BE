@@ -67,7 +67,7 @@ module.exports = {
             #swagger.summary = "Get Single Purchase"
         */
 
-        // console.log();
+        console.log('read run');
 
         if(req.params?.id) {
 

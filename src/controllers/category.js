@@ -55,7 +55,7 @@ module.exports = {
             #swagger.summary = "Get Single Category"
         */
 
-        // console.log();
+        console.log('read run');
 
         if(req.params?.id) {
 
