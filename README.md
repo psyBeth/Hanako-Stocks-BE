@@ -136,8 +136,15 @@ _Below is an example of how you can instruct your audience on installing and set
    nodemon index
    ```
 
+### IMPORTANT NOTES ! 
 
-*** to do list ***
+To use the application, you can log in with the following email and password <br>
+email: admin@site.com <br>
+password: aA?123456 <br>
+
+
+
+## *** to do list ***
 
 - test: login and user auth testing
 - debug: errors on user controller will be fixed
