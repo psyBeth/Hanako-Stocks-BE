@@ -10,6 +10,24 @@
 ![ERD](./ERD-hanakoStocks.png)
 
 
+## Tools and frameworks used:
+
+- **Express.js:** Fast and flexible Node.js web application framework.
+- **MongoDB:** Flexible and scalable NoSQL database solution.
+- **Mongoose:** Object Data Modeling (ODM) library for MongoDB.
+- **Logging:** Logging functionality is integrated to track application activities and errors.
+- **Swagger/Redoc:** Documentation is generated using Swagger or Redoc to provide API documentation in an interactive and user-friendly manner.
+- **JSON File Creation:** JSON files are created to store data or configurations for various purposes.
+- **Token-based Authentication:** Token-based authentication mechanism is implemented to ensure secure communication between client and server, enhancing overall application security and user authentication.
+- **Dotenv:** Node.js module used for loading environment variables.
+- **Express-async-errors:** Helper module for asynchronous error handling in Express applications.
+- **CRUD Operations** Users can create, read, update, and delete books from the database.
+- **Middleware** Middleware functions are implemented to handle requests, perform validations, and enhance security.
+- **Morgan** HTTP request logging middleware for Node.js. It generates log files for HTTP requests, providing valuable insights into how your application is functioning by recording details of incoming and outgoing HTTP requests.
+- **Multer** A versatile file upload middleware for Node.js. This package retrieves files from HTTP requests and uploads them to the server. It supports features such as multiple file uploads, file size limits, and file type restrictions.
+- **Nodemailer** A Node.js library for sending emails. Nodemailer simplifies the process of sending emails via an SMTP server. It supports features like email templates, attachments, and HTML formatting.
+
+
 ## Project Structure:
 
 ```
