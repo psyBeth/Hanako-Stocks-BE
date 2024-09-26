@@ -1,4 +1,4 @@
-### HANAKO STOCKS
+## HANAKO STOCKS
 
 ## Stock Management System 
 
@@ -89,8 +89,52 @@ Stock Management System/
   └── README.md       
 ```
 
+## Prerequisites
 
+This is an example of how to list things you need to use the software and how to install them.
 
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+## Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/psyBeth/Hanako-Stocks-BE.git
+   ```
+   GitHub CLI:
+    ```sh
+    gh repo clone psyBeth/Hanako-Stocks-BE
+    ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Create .env file in home directory.
+   ```sh
+   HOST=localhost
+   PORT=8000
+   MONGODB=ENTER YOUR Database adres or local: mongodb://127.0.0.1:8000/hanako-stocks-be
+   SECRET_KEY=ENTER YOUR random letters and number, for example: jsl78dd9ff6f6s9jkd89Kkfnfd
+   ACCESS_KEY=ENTER YOUR random letters and number, for example: jsl78dd9ff6f6s9jkd89Kkfnfd
+   REFRESH_KEY=ENTER YOUR random letters and number, for example: jsl78dd9ff6f6s9jkd89Kkfnfd
+   PAGE_SIZE=25
+
+   ```
+4. Logs File
+   ```sh
+   You can write:
+   mkdir logs
+   ```
+5. The project is ready, you can start using it now.
+   ```sh
+   You can run:
+   nodemon index
+   ```
 
 
 *** to do list ***
