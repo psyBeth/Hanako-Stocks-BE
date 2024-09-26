@@ -1,6 +1,6 @@
-# HANAKO STOCKS <a href="https://emoji.gg/emoji/6627-march7th-shopping"><img src="https://cdn3.emoji.gg/emojis/6627-march7th-shopping.png" width="64px" height="64px" alt="march7th_shopping"></a>
+# HANAKO STOCKS 
 
-## Stock Management System 
+## Stock Management System <a href="https://emoji.gg/emoji/6627-march7th-shopping"><img src="https://cdn3.emoji.gg/emojis/6627-march7th-shopping.png" width="64px" height="64px" alt="march7th_shopping"></a>
 
 - The Stock Management System is a web application developed to facilitate inventory tracking and management; designed for the [Hanako Store](https://hanako-store-1041.netlify.app). 
 
