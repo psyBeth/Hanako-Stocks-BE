@@ -95,4 +95,6 @@ Stock Management System/
 
 *** to do list ***
 
+- test: login and user auth testing
 - debug: errors on user controller will be fixed
+- chore: swagger info will be written in readme
