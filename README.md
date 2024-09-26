@@ -10,6 +10,68 @@
 ![ERD](./ERD-hanakoStocks.png)
 
 
+## Project Structure:
+
+```
+Stock Management System/
+  ├── index.js          
+  ├── .env
+  ├── public
+  ├    ┣ static
+  ├    ┣ index.html   
+  ├── src
+      ┣ configs
+      ┃ ┗ dbConnection.js
+      ┃ ┣ swagger.json
+      ┣ controllers
+      ┃ ┣ auth.js
+      ┃ ┣ brand.js
+      ┃ ┣ category.js
+      ┃ ┣ firm.js
+      ┃ ┣ product.js
+      ┃ ┣ purchase.js
+      ┃ ┣ sale.js
+      ┃ ┣ token.js
+      ┃ ┗ user.js
+      ┣ helpers
+      ┃ ┣ sync.js
+      ┃ ┣ sendMail.js
+      ┃ ┗ paswordEncrypte.js
+      ┣ middlewares
+      ┃ ┣ authentication.js
+      ┃ ┣ errorHandler.js
+      ┃ ┣ logger.js
+      ┃ ┣ permissions.js
+      ┃ ┣ upload.js
+      ┃ ┗ queryHandler.js
+      ┣ models
+      ┃ ┣ brand.js
+      ┃ ┣ category.js
+      ┃ ┣ firm.js
+      ┃ ┣ product.js
+      ┃ ┣ purchase.js
+      ┃ ┣ sale.js
+      ┃ ┣ token.js
+      ┃ ┗ user.js
+      ┣ routes
+      ┃ ┣ auth.js
+      ┃ ┣ brand.js
+      ┃ ┣ category.js
+      ┃ ┣ document.js
+      ┃ ┣ firm.js
+      ┃ ┣ index.js
+      ┃ ┣ product.js
+      ┃ ┣ purchase.js
+      ┃ ┣ sale.js
+      ┃ ┣ token.js
+      ┃ ┗ user.js
+      
+  ├── swaggerAutogen.js
+  ├── package.json   
+  └── README.md       
+```
+
+
 
 
 
