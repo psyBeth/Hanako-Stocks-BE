@@ -1,4 +1,4 @@
-# HANAKO STOCKS
+# HANAKO STOCKS <a href="https://emoji.gg/emoji/6627-march7th-shopping"><img src="https://cdn3.emoji.gg/emojis/6627-march7th-shopping.png" width="64px" height="64px" alt="march7th_shopping"></a>
 
 ## Stock Management System 
 
