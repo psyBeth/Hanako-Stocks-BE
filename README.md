@@ -1,4 +1,4 @@
-## HANAKO STOCKS
+# HANAKO STOCKS
 
 ## Stock Management System 
 
