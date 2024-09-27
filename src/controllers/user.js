@@ -137,7 +137,8 @@ module.exports = {
             #swagger.summary = "Delete User"
         */
 
-        if (req.params.id != req.user._id) {
+        // user id might be an object id
+        if (req.params.id.toString() !== req.user._id.toString()) {
             const data = await User.deleteOne({ _id: req.params.id });
 
             res.status(data.deletedCount ? 204 : 404).send({
