@@ -27,7 +27,7 @@ module.exports = {
         // can only see own records
         const customFilters = req.user?.isAdmin ? {} : { _id: req.user._id };  //! _id cannot be read: undefined
 
-        const data = await res.getModelList(User, customFilters); //! Something wrong here
+        const data = await res.getModelList(User, customFilters);
 
         res.status(200).send({
             error: false,
