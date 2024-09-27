@@ -29,6 +29,8 @@ module.exports = {
 
         const data = await res.getModelList(User, customFilters);
 
+        console.log(req.user);
+
         res.status(200).send({
             error: false,
             details: await res.getModelListDetails(User, customFilters),
