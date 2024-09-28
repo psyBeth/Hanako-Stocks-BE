@@ -154,4 +154,4 @@ password: aA?123456 <br>
 
 - test: login and user auth testing
 - debug: errors on user controller will be fixed
-- chore: swagger info will be written in readme
+- chore: swagger link will be added
