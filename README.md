@@ -6,6 +6,9 @@
 
 - The backend portion of this application provides a RESTful API server that enables users to manage their stock operations. The API supports functionality related to brands and purchases, among other inventory management features. Users can add, update, delete, and search for stock items. Additionally, they can filter stock items based on different categories and suppliers. The user authentication and authorization system assigns different user roles, each with specific levels of permissions. This ensures secure and effective collaboration among users.
 
+- If you prefer to see Redoc or JSON instead of Swagger, simply replace 'swagger' in the endpoint with 'redoc' or 'json'.
+   <!-- there will be link here -->
+
 
 ![ERD](./ERD-hanakoStocks.png)
 
@@ -141,6 +144,9 @@ _Below is an example of how you can instruct your audience on installing and set
 To use the application, you can log in with the following email and password <br>
 email: admin@site.com <br>
 password: aA?123456 <br>
+
+
+
 
 
 
