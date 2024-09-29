@@ -144,14 +144,15 @@ _Below is an example of how you can instruct your audience on installing and set
 To use the application, you can log in with the following email and password <br>
 email: admin@site.com <br>
 password: aA?123456 <br>
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## *** to do list ***
 
-- test: login and user auth testing
-- debug: errors on user controller will be fixed
+- test: getModelList testing 
+- debug: error on user controller will be fixed
 - chore: swagger link will be added
