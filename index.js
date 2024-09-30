@@ -34,7 +34,8 @@ app.use(require('./src/middlewares/authentication'));
 // Run logger:
 app.use(require('./src/middlewares/logger'));
 
-//* getModelList
+// res.getModelList():
+app.use(require('./src/middlewares/findSearchSortPage'));
 
 //? Routes:
 // HomePath:
