@@ -153,4 +153,5 @@ password: aA?123456 <br>
 
 ## *** to do list ***
 
+- debug: complete render (build: ok, deploy: error)
 - chore: swagger link will be added
