@@ -153,6 +153,4 @@ password: aA?123456 <br>
 
 ## *** to do list ***
 
-- test: getModelList testing 
-- debug: error on user controller will be fixed
 - chore: swagger link will be added
