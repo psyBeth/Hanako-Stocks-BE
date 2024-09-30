@@ -27,8 +27,8 @@ module.exports = {
         // can only see own records
         const customFilters = req.user?.isAdmin ? {} : { _id: req.user._id };  // fixed:  _id cannot be read: undefined
 
-        const data = await res.getModelList(User, customFilters);  //! code 500: res.getModelList is not a function 
-        //* findsearchsortpage middleware ???
+        const data = await res.getModelList(User, customFilters);  
+        // code 500: res.getModelList is not a function issue fixed ==> findSearchSortPage middleware imported to index
 
         console.log(req.user);
 
