@@ -20,9 +20,6 @@ module.exports = {
                 </ul>
             `
         */
-        // if (!req.user) {
-        //     return res.status(401).send({ error: true, message: "Unauthorized" });
-        // };  //login problem fixed
 
         // can only see own records
         const customFilters = req.user?.isAdmin ? {} : { _id: req.user._id };  // fixed:  _id cannot be read: undefined
